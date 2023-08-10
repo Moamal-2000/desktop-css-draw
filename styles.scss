@@ -1,6 +1,8 @@
 @import "./sass/mixins";
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -24,9 +26,10 @@ body {
   --light-orange: #ebb885;
   --very-light-orange: #f2d1b0;
   --tan: #d5a779;
-  --light-brown : #a07e5d;
-  --very-light-brown : #ae9175;
   --brown: #8b6e52;
+  --light-brown: #a07e5d;
+  --very-light-brown: #ae9175;
+  --brown-level2: #b58f68;
   --rose: #ffa4ae;
   --light-gray: #adadad;
   --very-light-gray: #e7e7e7;
@@ -55,6 +58,11 @@ body {
   position: relative;
   user-select: none;
 }
+
+
+
+
+
 
 // Underline [Start]
 .frame .underline {
@@ -85,6 +93,7 @@ body {
   right: -12px;
   width: var(--thick);
 }
+
 // Underline [End]
 
 
@@ -101,12 +110,17 @@ body {
   @include prefix(transform, translateX(-50%));
 }
 
+
+
+
+
+// Right wood [Start]
 .frame .desk .right-wood {
   position: absolute;
   right: 36px;
   bottom: 0;
   width: 26px;
-  height: 160px;
+  height: 174px;
   background-color: var(--tan);
   border-right: solid var(--border-thick) var(--blue-gray);
   border-left: solid var(--border-thick) var(--blue-gray);
@@ -126,36 +140,181 @@ body {
   top: -5px;
   background-color: var(--light-orange);
   width: 100px;
-  height: 130px;
+  height: 140px;
   border-radius: 40px;
   left: -76px;
 }
+// Right wood [End]
 
+
+
+
+
+
+// Desktop wood [Start]
 .desk .desktop-wood {
-
+  position: absolute;
+  left: 4px;
+  top: -196px;
+  width: 712px;
+  height: 26px;
+  border-radius: 50px;
+  background-color: var(--light-orange);
+  border: solid var(--border-thick) var(--blue-gray);
+  z-index: 10;
+  overflow: hidden;
 }
 
+.desk .desktop-wood::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--very-light-orange);
+}
+// Desktop wood [End]
+
+
+
+
+
+
+// Brown wood [Start]
 .desk .brown-wood {
-
+  position: absolute;
+  right: 62px;
+  top: -170px;
+  width: 457px;
+  height: 42px;
+  background-color: var(--brown);
+  border-bottom: solid var(--border-thick) var(--blue-gray);
+  overflow: hidden;
 }
 
+.desk .brown-wood .lines {
+  position: absolute;
+  left: 46px;
+  top: 4px;
+  width: 50px;
+  height: calc(var(--border-thick) - 1px);
+  background-color: var(--blue-gray);
+  border-radius: 50px;
+  transform: rotate(-50deg);
+  z-index: 1;
+}
+
+.desk .brown-wood .lines::before,
+.desk .brown-wood .lines::after {
+  background-color: inherit;
+  border-radius: inherit;
+  width: inherit;
+  height: inherit;
+}
+
+.desk .brown-wood .lines::before {
+  left: 23px;
+  top: 11px;
+}
+
+.desk .brown-wood .lines::after {
+  left: 133px;
+  top: 223px;
+}
+
+.desk .brown-wood .shadow-effect {
+  position: absolute;
+  left: -87px;
+  top: 8px;
+  background-color: var(--light-brown);
+  width: 400px;
+  height: 400px;
+  border-radius: 50px;
+}
+
+.desk .brown-wood .shadow-effect::before {
+  position: absolute;
+  left: 100px;
+  top: 25px;
+  width: 285px;
+  height: 15px;
+  background-color: var(--very-light-brown);
+  border-radius: 50px;
+}
+// Brown wood [End]
+
+
+
+
+
+
+// Cabinet [Start]
 .desk .cabinet {
   position: absolute;
   left: 36px;
   bottom: 0;
-  width: 160px;
-  height: 80px;
-  background-color: var(--tan);
+  width: 165px;
+  height: 90px;
   border: solid var(--border-thick) var(--blue-gray);
   overflow: hidden;
 }
 
 .desk .cabinet.top {
-  bottom: calc(80px - var(--border-thick));
+  bottom: calc(90px - var(--border-thick));
+  background-color: var(--light-orange);
+}
+
+.desk .cabinet.top>.shadow-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--brown-level2);
 }
 
 .desk .cabinet.bottom {
-  
+  background-color: var(--tan);
+}
+
+.desk .cabinet.bottom>.shadow-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-top: solid 3px var(--very-light-orange);
+  border-left: solid 16px var(--very-light-orange);
+}
+
+.desk .cabinet.bottom>.shadow-effect::before {
+  width: 100px;
+  height: 100%;
+  background-color: var(--light-orange);
+  border-radius: 10px 20px 20px 10px;
+  left: -14px;
+  top: 0;
+}
+
+.desk .cabinet.bottom>.shadow-effect::after {
+  width: 127px;
+  height: 142px;
+  background-color: var(--light-orange);
+  border-radius: 10px 20px 20px 10px;
+  left: 11px;
+  top: -71px;
+  transform: rotate(257deg);
+  border-radius: 50%;
+}
+
+.desk .cabinet.bottom>.shadow-effect-two {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  border-top: solid 3px var(--very-light-orange);
 }
 
 .desk .cabinet .cabinet-door {
@@ -168,9 +327,21 @@ body {
   height: 68%;
   border: solid var(--border-thick) var(--blue-gray);
   border-radius: 2px;
+  @include center-x-y;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
 }
 
-.desk .cabinet.bottom .shadow-effect {
+.desk .cabinet .the-handle {
+  background-color: var(--blue-gray);
+  width: 38px;
+  height: 8px;
+  border-radius: 50px;
+  z-index: 10;
+}
+
+.desk .cabinet .cabinet-door .shadow-effect {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -180,8 +351,8 @@ body {
   border-left: solid 16px var(--very-light-orange);
 }
 
-.desk .cabinet.bottom .shadow-effect::before {
-  width: 100px;
+.desk .cabinet .cabinet-door .shadow-effect::before {
+  width: 90px;
   height: 100%;
   background-color: var(--light-orange);
   border-radius: 10px 20px 20px 10px;
@@ -189,26 +360,78 @@ body {
   top: 0;
 }
 
-.desk .cabinet.bottom .shadow-effect::after {
-  width: 127px;
-  height: 142px;
+.desk .cabinet .cabinet-door .shadow-effect::after {
+  width: 100px;
+  height: 90px;
   background-color: var(--light-orange);
   border-radius: 10px 20px 20px 10px;
   left: 11px;
-  top: -71px;
+  top: -58px;
   transform: rotate(257deg);
   border-radius: 50%;
 }
 
-.desk .cabinet.bottom .shadow-effect-two {
+.desk .cabinet .cabinet-door .shadow-effect-two {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10;
   border-top: solid 3px var(--very-light-orange);
 }
+// Cabinet [End]
+// Desk [End
+
+
+
+
+
+
+// Desktop [Start]
+.frame .desktop {}
+
+
+
+
+
+
+// Mouse [Start]
+.frame .desktop .mouse {
+
+}
+// Mouse [End]
+
+
+
+
+
+
+// Screen [Start]
+.frame .desktop .screen {
+
+}
+// Screen [End]
+
+
+
+
+
+// Red cube [Start]
+.frame .desktop .red-cube {
+
+}
+// Red cube [End]
+
+
+
+
+// Desk light [Start]
+.frame .desktop .desk-light {
+
+}
+// Desk light [End]
+
+
 
 
 :root {
@@ -219,9 +442,10 @@ body {
   --light-orange: #ebb885;
   --very-light-orange: #f2d1b0;
   --tan: #d5a779;
-  --light-brown : #a07e5d;
-  --very-light-brown : #ae9175;
   --brown: #8b6e52;
+  --light-brown: #a07e5d;
+  --very-light-brown: #ae9175;
+  --brown-level2: #b58f68;
   --rose: #ffa4ae;
   --light-gray: #adadad;
   --very-light-gray: #e7e7e7;
@@ -231,16 +455,5 @@ body {
   --light-green: #bdf4e4;
   --teal: #92adb0;
   --light-yellow: #e0c787;
-}
-// Desk [End]
-
-
-
-
-
-
-// Desktop [Start]
-.frame .desktop {
-  
 }
 // Desktop [Start]
