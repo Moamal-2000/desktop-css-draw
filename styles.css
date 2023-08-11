@@ -16,30 +16,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-:root {
-  --white: #fff;
-  --blue-gray: #2e334b;
-  --light-blue-gray: #51566b;
-  --very-light-blue-gray: #6b6f81;
-  --light-orange: #ebb885;
-  --very-light-orange: #f2d1b0;
-  --tan: #d5a779;
-  --brown: #8b6e52;
-  --light-brown: #a07e5d;
-  --very-light-brown: #ae9175;
-  --brown-level2: #b58f68;
-  --rose: #ffa4ae;
-  --light-gray: #adadad;
-  --very-light-gray: #e7e7e7;
-  --aqua: #00d2ff;
-  --light-sky-blue: #80e9ff;
-  --sky-blue: #59e2ff;
-  --light-green: #bdf4e4;
-  --teal: #92adb0;
-  --light-yellow: #e0c787;
-  --border-thick: 5px;
-}
-
 .container {
   width: 80%;
   margin: 0 auto;
@@ -354,6 +330,166 @@ body {
   border-top: solid 3px var(--very-light-orange);
 }
 
+.frame .desktop {
+  position: absolute;
+  left: 88px;
+  bottom: 248px;
+  width: 720px;
+}
+
+.frame .desktop .mouse {
+  position: absolute;
+  right: 150px;
+  top: -12px;
+  background-color: var(--very-light-gray);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: solid var(--border-thick) var(--blue-gray);
+}
+
+.frame .desktop .screen {
+  position: absolute;
+  right: 210px;
+  top: -177px;
+  width: 210px;
+  height: 180px;
+}
+
+.desktop .screen .screen-case {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 210px;
+  height: 150px;
+  background-color: var(--very-light-gray-level2);
+  border: solid var(--border-thick) var(--blue-gray);
+  border-radius: 15px;
+  z-index: 10;
+}
+
+.screen .screen-case .the-screen {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 4px;
+  background-color: var(--very-light-blue-gray);
+  border: solid 2px var(--blue-gray);
+  width: 95%;
+  height: 71%;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.screen-case .the-screen::before,
+.screen-case .the-screen::after {
+  background-color: var(--light-blue-gray);
+  height: 200px;
+  transform: rotate(45deg);
+}
+
+.screen-case .the-screen::before {
+  right: -21px;
+  top: 0;
+  width: 40px;
+}
+
+.screen-case .the-screen::after {
+  right: 40px;
+  top: -47px;
+  width: 60px;
+}
+
+.screen .screen-case .bottom {
+  position: absolute;
+  left: 0;
+  bottom: 26px;
+  width: 100%;
+  height: var(--border-thick);
+  background-color: var(--blue-gray);
+}
+
+.screen .screen-case .bottom::before {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
+  width: 14px;
+  height: 14px;
+  border: solid 2px var(--blue-gray);
+  border-radius: 50%;
+}
+
+.desktop .screen .stander {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 146px;
+  width: 40px;
+  height: 26px;
+  background-color: var(--very-light-gray-level2);
+  border: solid var(--border-thick) var(--blue-gray);
+}
+
+.desktop .screen .stander::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--light-gray);
+}
+
+.desktop .screen .stander-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 20px;
+  background-color: var(--very-light-gray-level2);
+  border: solid var(--border-thick) var(--blue-gray);
+  bottom: -8px;
+  border-radius: 50px;
+}
+
+.frame .desktop .red-cube {
+  position: absolute;
+  left: 230px;
+  bottom: -4px;
+  width: 42px;
+  height: 46px;
+  background-color: var(--rose);
+  border-radius: 0 0 15px 15px;
+  border: solid var(--border-thick) var(--blue-gray);
+}
+
+.frame .desktop .red-cube::before {
+  right: -16px;
+  top: 2px;
+  width: 28px;
+  height: 28px;
+  border: solid var(--border-thick) transparent;
+  border-color: var(--blue-gray) var(--blue-gray) transparent transparent;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+.frame .desktop .red-cube .shadow-effect {
+  position: absolute;
+  left: 5px;
+  top: 0;
+  width: 10px;
+  height: 18px;
+  border-radius: 50px;
+  background-color: var(--pink);
+}
+
+.frame .desktop .red-cube .shadow-effect::before {
+  left: -5px;
+  top: 0;
+  width: 33px;
+  height: 2px;
+  background-color: var(--pink);
+}
+
 :root {
   --white: #fff;
   --blue-gray: #2e334b;
@@ -366,13 +502,16 @@ body {
   --light-brown: #a07e5d;
   --very-light-brown: #ae9175;
   --brown-level2: #b58f68;
-  --rose: #ffa4ae;
+  --rose: #ff7382;
+  --pink: #ffa4ae;
   --light-gray: #adadad;
   --very-light-gray: #e7e7e7;
+  --very-light-gray-level2: #e1e1e1;
   --aqua: #00d2ff;
   --light-sky-blue: #80e9ff;
   --sky-blue: #59e2ff;
   --light-green: #bdf4e4;
   --teal: #92adb0;
   --light-yellow: #e0c787;
+  --border-thick: 5px;
 }/*# sourceMappingURL=styles.css.map */
