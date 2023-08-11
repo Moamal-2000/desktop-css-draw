@@ -16,15 +16,47 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+  --white: #fff;
+  --blue-gray: #2e334b;
+  --light-blue-gray: #51566b;
+  --very-light-blue-gray: #6b6f81;
+  --light-orange: #ebb885;
+  --very-light-orange: #f2d1b0;
+  --tan: #d5a779;
+  --brown: #8b6e52;
+  --light-brown: #a07e5d;
+  --very-light-brown: #ae9175;
+  --brown-level2: #b58f68;
+  --rose: #ff7382;
+  --pink: #ffa4ae;
+  --light-gray: #adadad;
+  --very-light-gray: #e7e7e7;
+  --very-light-gray-level2: #e1e1e1;
+  --aqua: #13d4ff;
+  --light-sky-blue: #80e9ff;
+  --sky-blue: #62e5ff;
+  --light-green: #bdf4e4;
+  --teal: #92adb0;
+  --light-yellow: #e0c787;
+  --border-thick: 5px;
+}
+
 .container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
 }
 
+@media (max-width: 992px) {
+  .container {
+    width: 95%;
+  }
+}
 .frame {
   width: 900px;
+  min-width: 900px;
   height: 600px;
   margin-top: 54px;
   padding: 30px;
@@ -35,6 +67,23 @@ body {
           user-select: none;
 }
 
+@media (max-width: 992px) {
+  .frame {
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 768px) {
+  .frame {
+    transform: scale(0.4);
+    margin-top: -100px;
+  }
+}
+@media (max-width: 420px) {
+  .frame {
+    transform: scale(0.37);
+    margin-top: -120px;
+  }
+}
 .frame .underline {
   --thick: 5px;
   width: 750px;
@@ -53,6 +102,11 @@ body {
   -ms-border-radius: 10px;
 }
 
+@media (max-width: 992px) {
+  .frame .underline {
+    width: calc(100% - 100px);
+  }
+}
 .frame .underline::before,
 .frame .underline::after {
   background-color: var(--blue-gray);
@@ -339,7 +393,7 @@ body {
 
 .frame .desktop .mouse {
   position: absolute;
-  right: 150px;
+  right: 154px;
   top: -12px;
   background-color: var(--very-light-gray);
   width: 40px;
@@ -359,9 +413,9 @@ body {
 .desktop .screen .screen-case {
   position: absolute;
   left: 0;
-  top: 2px;
+  top: 12px;
   width: 210px;
-  height: 150px;
+  height: 140px;
   background-color: var(--very-light-gray-level2);
   border: solid var(--border-thick) var(--blue-gray);
   border-radius: 15px;
@@ -379,25 +433,43 @@ body {
   height: 71%;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.screen .screen-case .the-screen:hover {
+  background-color: var(--light-sky-blue);
+  transition: background-color 0.3s 0.2s;
 }
 
 .screen-case .the-screen::before,
 .screen-case .the-screen::after {
   background-color: var(--light-blue-gray);
-  height: 200px;
+  height: 400px;
   transform: rotate(45deg);
+  transition: 0.2s 0.4s;
 }
 
 .screen-case .the-screen::before {
-  right: -21px;
-  top: 0;
+  right: 54px;
+  top: -133px;
   width: 40px;
 }
 
+.screen .screen-case .the-screen:hover::before {
+  right: 260px;
+  top: -133px;
+  transition: 0.2s;
+}
+
 .screen-case .the-screen::after {
-  right: 40px;
-  top: -47px;
+  right: -80px;
+  top: -140px;
   width: 60px;
+}
+
+.screen .screen-case .the-screen:hover::after {
+  right: -120px;
+  transition: 0.2s;
 }
 
 .screen .screen-case .bottom {
@@ -450,6 +522,34 @@ body {
   border-radius: 50px;
 }
 
+.desktop .screen .line-effect {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 7px;
+  width: 30.5px;
+  height: 6px;
+  background-color: var(--very-light-gray);
+}
+
+.desktop .screen .line-effect::before {
+  left: 0;
+  top: 50%;
+  transform: translateY(calc(-50% + 0.5px));
+  background-color: var(--blue-gray);
+  width: 8px;
+  height: 3px;
+}
+
+.desktop .screen .line-effect::after {
+  left: 12px;
+  top: 50%;
+  transform: translateY(calc(-50% + 0.5px));
+  background-color: var(--blue-gray);
+  width: 6px;
+  height: 3px;
+}
+
 .frame .desktop .red-cube {
   position: absolute;
   left: 230px;
@@ -490,28 +590,235 @@ body {
   background-color: var(--pink);
 }
 
-:root {
-  --white: #fff;
-  --blue-gray: #2e334b;
-  --light-blue-gray: #51566b;
-  --very-light-blue-gray: #6b6f81;
-  --light-orange: #ebb885;
-  --very-light-orange: #f2d1b0;
-  --tan: #d5a779;
-  --brown: #8b6e52;
-  --light-brown: #a07e5d;
-  --very-light-brown: #ae9175;
-  --brown-level2: #b58f68;
-  --rose: #ff7382;
-  --pink: #ffa4ae;
-  --light-gray: #adadad;
-  --very-light-gray: #e7e7e7;
-  --very-light-gray-level2: #e1e1e1;
-  --aqua: #00d2ff;
-  --light-sky-blue: #80e9ff;
-  --sky-blue: #59e2ff;
-  --light-green: #bdf4e4;
-  --teal: #92adb0;
-  --light-yellow: #e0c787;
-  --border-thick: 5px;
+.frame .desktop .desk-lamp {
+  position: absolute;
+  left: 70px;
+  top: -147px;
+  width: 130px;
+  height: 150px;
+}
+
+.desktop .desk-lamp .lamp-base {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -14px;
+  background-color: var(--aqua);
+  width: 76px;
+  height: 30px;
+  border: solid var(--border-thick) var(--blue-gray);
+  border-radius: 50px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.desktop .desk-lamp .lamp-base::before {
+  left: 0;
+  top: 0;
+  background-color: var(--sky-blue);
+  width: 85%;
+  height: 3px;
+  border-radius: 50px;
+}
+
+.desktop .desk-lamp .circle-base {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2px;
+  background-color: var(--aqua);
+  width: 30px;
+  height: 30px;
+  border: solid var(--border-thick) var(--blue-gray);
+  border-radius: 50%;
+  z-index: -2;
+}
+
+.desktop .desk-lamp .circle-base::before {
+  left: 2px;
+  top: 1px;
+  background-color: var(--sky-blue);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.desktop .desk-lamp .stand {
+  position: absolute;
+  left: 0px;
+  top: 52px;
+  border: solid var(--border-thick) var(--blue-gray);
+  width: 30px;
+  height: 30px;
+  background-color: var(--light-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop .desk-lamp .stand::before,
+.desktop .desk-lamp .stand::after {
+  width: 80px;
+  height: var(--border-thick);
+  background-color: var(--blue-gray);
+  z-index: -3;
+}
+
+.desktop .desk-lamp .stand::before {
+  left: -6px;
+  top: -26px;
+  transform: rotate(137deg);
+}
+
+.desktop .desk-lamp .stand::after {
+  left: -6px;
+  top: 44px;
+  transform: rotate(44deg);
+}
+
+.desktop .desk-lamp .stand .inner-circle {
+  background-color: var(--teal);
+  width: 35%;
+  height: 35%;
+  border-radius: 50%;
+}
+
+.desktop .desk-lamp .light-holder-container {
+  position: absolute;
+  left: 43px;
+  top: 24px;
+  transform: rotate(-42deg);
+  z-index: -4;
+}
+
+.desktop .desk-lamp .light-holder {
+  position: absolute;
+  background-color: var(--aqua);
+  width: 46px;
+  height: 50px;
+  border-radius: 50px 50px 0 0;
+  border: solid var(--border-thick) var(--blue-gray);
+  overflow: hidden;
+}
+
+.desk-lamp .light-holder .lines {
+  position: absolute;
+  left: -2px;
+  bottom: 5px;
+  width: 16px;
+  height: 4px;
+  background-color: var(--blue-gray);
+  border-radius: 50px;
+}
+
+.desk-lamp .light-holder .lines::before {
+  background-color: inherit;
+  right: -6px;
+  width: 4px;
+  height: 4px;
+  border-radius: inherit;
+}
+
+.desk-lamp .light-holder .light-effect {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background-color: var(--sky-blue);
+}
+
+.desk-lamp .light-holder .light-effect::before {
+  background-color: var(--light-sky-blue);
+  left: 7px;
+  top: 10px;
+  width: 7px;
+  height: 14px;
+  border-radius: 50%;
+  transform: rotate(324deg);
+  z-index: 2;
+}
+
+.desk-lamp .light-holder .light-effect::after {
+  background-color: var(--sky-blue);
+  left: -18px;
+  top: 11px;
+  width: 200%;
+  height: 5px;
+  z-index: 1;
+}
+
+.desk-lamp .light-holder-back {
+  position: absolute;
+  left: 9px;
+  top: -9px;
+  border: solid var(--border-thick) var(--blue-gray);
+  width: 27px;
+  height: 27px;
+  background-color: var(--sky-blue);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.desk-lamp .lamp-light {
+  position: absolute;
+  left: 8px;
+  top: 33px;
+  border: solid 3px var(--blue-gray);
+  width: 27px;
+  height: 27px;
+  background-color: var(--light-yellow);
+  border-radius: 50%;
+  z-index: -1;
+  transition: background-color 0.3s;
+}
+
+.desk-lamp:hover .lamp-light {
+  background-color: #f5d923;
+}
+
+.desk-lamp .wires-structure {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.desk-lamp .wires-structure .top {
+  position: absolute;
+  left: 11px;
+  top: 7px;
+  width: 52px;
+  height: 43px;
+  border-radius: 2px 39px 4px 29px;
+  border: solid 3px;
+  border-color: transparent transparent var(--blue-gray) var(--blue-gray);
+  transform: rotate(92deg);
+}
+
+.desk-lamp .wires-structure .left-bottom {
+  position: absolute;
+  left: 3px;
+  top: 70px;
+  width: 52px;
+  height: 32px;
+  border-radius: 2px 39px 4px 29px;
+  border: solid 3px;
+  border-color: transparent transparent var(--blue-gray) var(--blue-gray);
+}
+
+.desk-lamp .wires-structure .right-bottom {
+  position: absolute;
+  left: 32px;
+  top: 99px;
+  width: 36px;
+  height: 27px;
+  border-radius: 2px 39px 4px 29px;
+  border: solid 3px;
+  border-color: transparent transparent var(--blue-gray) var(--blue-gray);
+  transform: rotateY(190deg) rotateX(190deg);
+  z-index: -3;
 }/*# sourceMappingURL=styles.css.map */
