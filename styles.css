@@ -8,9 +8,16 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--page-background);
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
 }
 
 :root {
+  --dark-white-color: #252525;
+  --page-background: #fff;
   --blue-gray: #2e334b;
   --light-blue-gray: #51566b;
   --very-light-blue-gray: #6b6f81;
@@ -494,6 +501,9 @@ body {
   width: 95%;
   height: 71%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: solid 2px var(--blue-gray);
   background-color: var(--very-light-blue-gray);
   -webkit-transform: translateX(-50%);
@@ -509,7 +519,6 @@ body {
   -o-transition: background-color 0.3s;
   -ms-transition: background-color 0.3s;
 }
-
 .screen .screen-case .the-screen:hover {
   background-color: var(--light-sky-blue);
   -webkit-transition: background-color 0.3s 0.2s;
@@ -561,6 +570,22 @@ body {
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
   -ms-transition: 0.2s;
+}
+
+.screen-case .the-screen .text {
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 10;
+  position: relative;
+  top: 100%;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+}
+
+.screen-case .the-screen:hover .text {
+  top: 4px;
 }
 
 .screen .screen-case .bottom {
@@ -1043,4 +1068,46 @@ body {
   -o-transform: rotateY(190deg) rotateX(190deg);
   -ms-transform: rotateY(190deg) rotateX(190deg);
   border-color: transparent transparent var(--blue-gray) var(--blue-gray);
+}
+
+#dark-mode-icon {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  position: relative;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+#dark-mode-icon i {
+  font-size: 24px;
+  color: var(--dark-white-color);
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+}
+#dark-mode-icon i:hover {
+  opacity: 0.5;
+}
+
+#dark-mode-icon i:last-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
 }/*# sourceMappingURL=styles.css.map */

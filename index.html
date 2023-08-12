@@ -8,9 +8,16 @@
   <meta name="author" content="Moamal Alaa">
   <title>Draw desktop with CSS</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Font awesome kit -->
+  <script src="https://kit.fontawesome.com/5a1527845b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <div id="dark-mode-icon">
+    <i class="fa-solid fa-moon show"></i>
+    <i class="fa-solid fa-sun hide"></i>
+  </div>
+
   <div class="container">
     <div class="frame">
 
@@ -20,7 +27,9 @@
 
         <div class="screen">
           <div class="screen-case">
-            <div class="the-screen"></div>
+            <div class="the-screen">
+              <div class="text">Welcome</div>
+            </div>
             <div class="bottom"></div>
           </div>
           <div class="stander"></div>
@@ -92,6 +101,8 @@
       <div class="underline"></div>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
