@@ -6,12 +6,6 @@
   box-sizing: border-box;
 }
 
-*::before,
-*::after {
-  content: "";
-  position: absolute;
-}
-
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -109,6 +103,8 @@ body {
 }
 .frame .underline::before,
 .frame .underline::after {
+  content: "";
+  position: absolute;
   background-color: var(--blue-gray);
   height: var(--thick);
   -webkit-border-radius: 10px;
@@ -151,6 +147,8 @@ body {
 }
 
 .desk .right-wood::before {
+  content: "";
+  position: absolute;
   width: 100%;
   height: 12px;
   top: 0;
@@ -160,6 +158,8 @@ body {
 }
 
 .desk .right-wood::after {
+  content: "";
+  position: absolute;
   top: -5px;
   background-color: var(--light-orange);
   width: 100px;
@@ -182,6 +182,7 @@ body {
 }
 
 .desk .desktop-wood::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -215,6 +216,8 @@ body {
 
 .desk .brown-wood .lines::before,
 .desk .brown-wood .lines::after {
+  content: "";
+  position: absolute;
   background-color: inherit;
   border-radius: inherit;
   width: inherit;
@@ -242,6 +245,7 @@ body {
 }
 
 .desk .brown-wood .shadow-effect::before {
+  content: "";
   position: absolute;
   left: 100px;
   top: 25px;
@@ -289,11 +293,17 @@ body {
   border-left: solid 16px var(--very-light-orange);
 }
 
+.desk .cabinet.bottom > .shadow-effect::before,
+.desk .cabinet.bottom > .shadow-effect::after {
+  content: "";
+  position: absolute;
+  background-color: var(--light-orange);
+  border-radius: 10px 20px 20px 10px;
+}
+
 .desk .cabinet.bottom > .shadow-effect::before {
   width: 100px;
   height: 100%;
-  background-color: var(--light-orange);
-  border-radius: 10px 20px 20px 10px;
   left: -14px;
   top: 0;
 }
@@ -301,8 +311,6 @@ body {
 .desk .cabinet.bottom > .shadow-effect::after {
   width: 127px;
   height: 142px;
-  background-color: var(--light-orange);
-  border-radius: 10px 20px 20px 10px;
   left: 11px;
   top: -71px;
   transform: rotate(257deg);
@@ -355,11 +363,17 @@ body {
   border-left: solid 16px var(--very-light-orange);
 }
 
+.desk .cabinet .cabinet-door .shadow-effect::before,
+.desk .cabinet .cabinet-door .shadow-effect::after {
+  content: "";
+  position: absolute;
+  background-color: var(--light-orange);
+  border-radius: 10px 20px 20px 10px;
+}
+
 .desk .cabinet .cabinet-door .shadow-effect::before {
   width: 90px;
   height: 100%;
-  background-color: var(--light-orange);
-  border-radius: 10px 20px 20px 10px;
   left: -14px;
   top: 0;
 }
@@ -367,8 +381,6 @@ body {
 .desk .cabinet .cabinet-door .shadow-effect::after {
   width: 100px;
   height: 90px;
-  background-color: var(--light-orange);
-  border-radius: 10px 20px 20px 10px;
   left: 11px;
   top: -58px;
   transform: rotate(257deg);
@@ -443,6 +455,8 @@ body {
 
 .screen-case .the-screen::before,
 .screen-case .the-screen::after {
+  content: "";
+  position: absolute;
   background-color: var(--light-blue-gray);
   height: 400px;
   transform: rotate(45deg);
@@ -482,6 +496,8 @@ body {
 }
 
 .screen .screen-case .bottom::before {
+  content: "";
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 10px;
@@ -503,6 +519,8 @@ body {
 }
 
 .desktop .screen .stander::before {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -532,22 +550,25 @@ body {
   background-color: var(--very-light-gray);
 }
 
-.desktop .screen .line-effect::before {
-  left: 0;
+.desktop .screen .line-effect::before,
+.desktop .screen .line-effect::after {
+  content: "";
+  position: absolute;
   top: 50%;
   transform: translateY(calc(-50% + 0.5px));
   background-color: var(--blue-gray);
+  height: 3px;
+}
+
+.desktop .screen .line-effect::before {
+  left: 0;
   width: 8px;
   height: 3px;
 }
 
 .desktop .screen .line-effect::after {
   left: 12px;
-  top: 50%;
-  transform: translateY(calc(-50% + 0.5px));
-  background-color: var(--blue-gray);
   width: 6px;
-  height: 3px;
 }
 
 .frame .desktop .red-cube {
@@ -562,6 +583,8 @@ body {
 }
 
 .frame .desktop .red-cube::before {
+  content: "";
+  position: absolute;
   right: -16px;
   top: 2px;
   width: 28px;
@@ -583,6 +606,8 @@ body {
 }
 
 .frame .desktop .red-cube .shadow-effect::before {
+  content: "";
+  position: absolute;
   left: -5px;
   top: 0;
   width: 33px;
@@ -613,6 +638,8 @@ body {
 }
 
 .desktop .desk-lamp .lamp-base::before {
+  content: "";
+  position: absolute;
   left: 0;
   top: 0;
   background-color: var(--sky-blue);
@@ -635,6 +662,8 @@ body {
 }
 
 .desktop .desk-lamp .circle-base::before {
+  content: "";
+  position: absolute;
   left: 2px;
   top: 1px;
   background-color: var(--sky-blue);
@@ -659,6 +688,8 @@ body {
 
 .desktop .desk-lamp .stand::before,
 .desktop .desk-lamp .stand::after {
+  content: "";
+  position: absolute;
   width: 80px;
   height: var(--border-thick);
   background-color: var(--blue-gray);
@@ -713,6 +744,8 @@ body {
 }
 
 .desk-lamp .light-holder .lines::before {
+  content: "";
+  position: absolute;
   background-color: inherit;
   right: -6px;
   width: 4px;
@@ -731,6 +764,8 @@ body {
 }
 
 .desk-lamp .light-holder .light-effect::before {
+  content: "";
+  position: absolute;
   background-color: var(--light-sky-blue);
   left: 7px;
   top: 10px;
@@ -742,6 +777,8 @@ body {
 }
 
 .desk-lamp .light-holder .light-effect::after {
+  content: "";
+  position: absolute;
   background-color: var(--sky-blue);
   left: -18px;
   top: 11px;
