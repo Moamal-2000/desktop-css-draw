@@ -58,7 +58,7 @@ body {
   width: 900px;
   min-width: 900px;
   height: 600px;
-  margin-top: 54px;
+  margin-top: 10px;
   padding: 30px;
   box-shadow: rgba(99, 99, 99, .2) 0 2px 8px 0;
   position: relative;
@@ -550,12 +550,14 @@ body {
   font-weight: bold;
   z-index: 10;
   position: relative;
-  top: 100%;
-  @include prefix(transition, .5s);
+  top: 4px;
+  opacity: 0;
+  @include prefix(transition, opacity .5s);
 }
 
 .screen-case .the-screen:hover .text {
-  top: 4px;
+  opacity: 1;
+  @include prefix(transition, opacity .5s .2s);
 }
 
 .screen .screen-case .bottom {
@@ -933,11 +935,27 @@ body {
   border: solid 3px var(--blue-gray);
   @include prefix(border-radius, 50%);
   background-color: var(--light-yellow);
-  @include prefix(transition, background-color .3s);
+  animation: broken-light 4s .5s infinite ease-in-out;
 }
 
-.desk-lamp:hover .lamp-light {
-  background-color: #ffe017;
+@keyframes broken-light {
+  0% {
+    background-color: var(--light-yellow);
+  }
+
+  5%,
+  15% {
+    background-color: #ffe017;
+  }
+
+  10%,
+  20% {
+    background-color: var(--light-yellow);
+  }
+
+  100% {
+    background-color: var(--light-yellow);
+  }
 }
 // Lamp light [End]
 
@@ -1005,8 +1023,8 @@ body {
   cursor: pointer;
   position: relative;
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 0;
+  top: 0;
 }
 
 #dark-mode-icon i {
