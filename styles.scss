@@ -1,19 +1,3 @@
-@import "./sass/mixins";
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--page-background);
-  @include prefix(transition, background-color .3s)
-}
-
 :root {
   --dark-white-color: #252525;
   --page-background: #fff;
@@ -38,7 +22,21 @@ body {
   --light-green: #bdf4e4;
   --teal: #92adb0;
   --light-yellow: #e0c787;
-  --border-thick: 5px;
+  --border-thickness: 5px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--page-background);
+  transition: background-color .3s;
 }
 
 .container {
@@ -67,20 +65,20 @@ body {
 
 @media (max-width: 992px) {
   .frame {
-    @include prefix(transform, scale(.8));
+    scale: .8;
   }
 }
 
 @media (max-width: 768px) {
   .frame {
-    @include prefix(transform, scale(.4));
+    scale: .4;
     margin-top: -100px;
   }
 }
 
 @media (max-width: 420px) {
   .frame {
-    @include prefix(transform, scale(.37));
+    scale: .37;
     margin-top: -120px;
   }
 }
@@ -91,15 +89,16 @@ body {
 
 
 // Underline [Start]
+
 .frame .underline {
   width: 750px;
-  height: var(--border-thick);
+  height: var(--border-thickness);
   background-color: var(--blue-gray);
   position: absolute;
   bottom: 50px;
   left: 50%;
-  @include prefix(transform, translateX(-50%));
-  @include prefix(border-radius, 10px);
+  translate: -50% 0;
+  border-radius: 10px;
 }
 
 .frame .underline::before,
@@ -107,8 +106,8 @@ body {
   content: '';
   position: absolute;
   background-color: var(--blue-gray);
-  height: var(--border-thick);
-  @include prefix(border-radius, 10px);
+  height: var(--border-thickness);
+  border-radius: 10px;
 }
 
 .frame .underline::before {
@@ -118,7 +117,7 @@ body {
 
 .frame .underline::after {
   right: -12px;
-  width: var(--border-thick);
+  width: var(--border-thickness);
 }
 
 // Underline [End]
@@ -129,12 +128,13 @@ body {
 
 
 // Desk [Start]
+
 .frame .desk {
   position: absolute;
   width: 720px;
   bottom: 52px;
   left: 50%;
-  @include prefix(transform, translateX(-50%));
+  translate: -50% 0;
 }
 
 
@@ -142,6 +142,7 @@ body {
 
 
 // Right wood [Start]
+
 .frame .desk .right-wood {
   position: absolute;
   right: 36px;
@@ -149,8 +150,8 @@ body {
   width: 26px;
   height: 174px;
   background-color: var(--tan);
-  border-right: solid var(--border-thick) var(--blue-gray);
-  border-left: solid var(--border-thick) var(--blue-gray);
+  border-right: solid var(--border-thickness) var(--blue-gray);
+  border-left: solid var(--border-thickness) var(--blue-gray);
   overflow: hidden;
 }
 
@@ -172,7 +173,7 @@ body {
   background-color: var(--light-orange);
   width: 100px;
   height: 140px;
-  @include prefix(border-radius, 40px);
+  border-radius: 40px;
   left: -76px;
 }
 
@@ -184,15 +185,16 @@ body {
 
 
 // Desktop wood [Start]
+
 .desk .desktop-wood {
   position: absolute;
   left: 4px;
   top: -196px;
   width: 712px;
   height: 26px;
-  @include prefix(border-radius, 50px);
+  border-radius: 50px;
   background-color: var(--light-orange);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
   z-index: 10;
   overflow: hidden;
 }
@@ -215,6 +217,7 @@ body {
 
 
 // Brown wood [Start]
+
 .desk .brown-wood {
   position: absolute;
   right: 62px;
@@ -222,7 +225,7 @@ body {
   width: 457px;
   height: 42px;
   background-color: var(--brown);
-  border-bottom: solid var(--border-thick) var(--blue-gray);
+  border-bottom: solid var(--border-thickness) var(--blue-gray);
   overflow: hidden;
 }
 
@@ -231,10 +234,10 @@ body {
   left: 46px;
   top: 4px;
   width: 50px;
-  height: calc(var(--border-thick) - 1px);
+  height: calc(var(--border-thickness) - 1px);
   background-color: var(--blue-gray);
-  @include prefix(border-radius, 50px);
-  transform: rotate(-50deg);
+  border-radius: 50px;
+  rotate: -50deg;
   z-index: 1;
 }
 
@@ -243,7 +246,7 @@ body {
   content: '';
   position: absolute;
   background-color: inherit;
-  @include prefix(border-radius, inherit);
+  border-radius: inherit;
   width: inherit;
   height: inherit;
 }
@@ -265,7 +268,7 @@ body {
   width: 400px;
   height: 400px;
   background-color: var(--light-brown);
-  @include prefix(border-radius, 50px);
+  border-radius: 50px;
 }
 
 .desk .brown-wood .shadow-effect::before {
@@ -276,7 +279,7 @@ body {
   width: 285px;
   height: 15px;
   background-color: var(--very-light-brown);
-  @include prefix(border-radius, 50px);
+  border-radius: 50px;
 }
 
 // Brown wood [End]
@@ -287,18 +290,19 @@ body {
 
 
 // Cabinet [Start]
+
 .desk .cabinet {
   position: absolute;
   left: 36px;
   bottom: 0;
   width: 165px;
   height: 90px;
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
   overflow: hidden;
 }
 
 .desk .cabinet.top {
-  bottom: calc(90px - var(--border-thick));
+  bottom: calc(90px - var(--border-thickness));
   background-color: var(--light-orange);
 }
 
@@ -330,7 +334,7 @@ body {
   content: '';
   position: absolute;
   background-color: var(--light-orange);
-  @include prefix(border-radius, 10px 20px 20px 10px);
+  border-radius: 10px 20px 20px 10px;
 }
 
 .desk .cabinet.bottom>.shadow-effect::before {
@@ -345,8 +349,8 @@ body {
   height: 142px;
   left: 11px;
   top: -71px;
-  @include prefix(transform, rotate(257deg));
-  @include prefix(border-radius, 50%);
+  rotate: 257deg;
+  border-radius: 50%;
 }
 
 .desk .cabinet.bottom>.shadow-effect-two {
@@ -363,13 +367,15 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  @include prefix(transform, translate(-50%, -50%));
+  translate: -50% -50%;
   background-color: var(--tan);
   width: 76%;
   height: 68%;
-  border: solid var(--border-thick) var(--blue-gray);
-  @include prefix(border-radius, 2px);
-  @include center-x-y;
+  border: solid var(--border-thickness) var(--blue-gray);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   z-index: 10;
@@ -380,7 +386,7 @@ body {
   height: 8px;
   z-index: 10;
   background-color: var(--blue-gray);
-  @include prefix(border-radius, 50px);
+  border-radius: 50px;
 }
 
 .desk .cabinet .cabinet-door .shadow-effect {
@@ -398,7 +404,7 @@ body {
   content: '';
   position: absolute;
   background-color: var(--light-orange);
-  @include prefix(border-radius, 10px 20px 20px 10px);
+  border-radius: 10px 20px 20px 10px;
 }
 
 .desk .cabinet .cabinet-door .shadow-effect::before {
@@ -413,8 +419,8 @@ body {
   height: 90px;
   left: 11px;
   top: -58px;
-  @include prefix(transform, rotate(257deg));
-  @include prefix(border-radius, 50%);
+  rotate: 257deg;
+  border-radius: 50%;
 }
 
 .desk .cabinet .cabinet-door .shadow-effect-two {
@@ -427,7 +433,7 @@ body {
 }
 
 // Cabinet [End]
-// Desk [End
+// Desk [End]
 
 
 
@@ -435,6 +441,7 @@ body {
 
 
 // Desktop [Start]
+
 .frame .desktop {
   position: absolute;
   left: 88px;
@@ -448,15 +455,16 @@ body {
 
 
 // Mouse [Start]
+
 .frame .desktop .mouse {
   position: absolute;
   right: 154px;
   top: -12px;
   width: 40px;
   height: 40px;
-  @include prefix(border-radius, 50%);
+  border-radius: 50%;
   background-color: var(--very-light-gray);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 // Mouse [End]
@@ -467,6 +475,7 @@ body {
 
 
 // Screen [Start]
+
 .frame .desktop .screen {
   position: absolute;
   right: 210px;
@@ -480,6 +489,7 @@ body {
 
 
 // Screen case [Start]
+
 .desktop .screen .screen-case {
   position: absolute;
   left: 0;
@@ -487,9 +497,9 @@ body {
   width: 210px;
   height: 140px;
   z-index: 10;
-  @include prefix(border-radius, 15px);
+  border-radius: 15px;
   background-color: var(--very-light-gray-level2);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .screen .screen-case .the-screen {
@@ -499,16 +509,18 @@ body {
   width: 95%;
   height: 71%;
   overflow: hidden;
-  @include center-x-y;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: solid 2px var(--blue-gray);
   background-color: var(--very-light-blue-gray);
-  @include prefix(transform, translateX(-50%));
-  @include prefix(border-radius, 10px 10px 0 0);
-  @include prefix(transition, background-color .3s);
+  translate: -50% 0;
+  border-radius: 10px 10px 0 0;
+  transition: background-color .3s;
 
   &:hover {
     background-color: var(--light-sky-blue);
-    @include prefix(transition, background-color .3s .2s);
+    transition: background-color .3s .2s;
   }
 }
 
@@ -518,8 +530,8 @@ body {
   position: absolute;
   height: 400px;
   background-color: var(--light-blue-gray);
-  @include prefix(transform, rotate(45deg));
-  @include prefix(transition, .2s .4s);
+  rotate: 45deg;
+  transition: .2s .4s;
 }
 
 .screen-case .the-screen::before {
@@ -531,7 +543,7 @@ body {
 .screen .screen-case .the-screen:hover::before {
   right: 260px;
   top: -133px;
-  @include prefix(transition, .2s);
+  transition: .2s;
 }
 
 .screen-case .the-screen::after {
@@ -542,7 +554,7 @@ body {
 
 .screen .screen-case .the-screen:hover::after {
   right: -120px;
-  @include prefix(transition, .2s);
+  transition: .2s;
 }
 
 .screen-case .the-screen .text {
@@ -552,12 +564,12 @@ body {
   position: relative;
   top: 4px;
   opacity: 0;
-  @include prefix(transition, opacity .5s);
+  transition: opacity .5s;
 }
 
 .screen-case .the-screen:hover .text {
   opacity: 1;
-  @include prefix(transition, opacity .5s .2s);
+  transition: opacity .5s .2s;
 }
 
 .screen .screen-case .bottom {
@@ -565,7 +577,7 @@ body {
   left: 0;
   bottom: 26px;
   width: 100%;
-  height: var(--border-thick);
+  height: var(--border-thickness);
   background-color: var(--blue-gray);
 }
 
@@ -577,9 +589,10 @@ body {
   width: 14px;
   height: 14px;
   border: solid 2px var(--blue-gray);
-  @include prefix(border-radius, 50%);
-  @include prefix(transform, translateX(-50%));
+  border-radius: 50%;
+  translate: -50%;
 }
+
 // Screen case [End]
 
 
@@ -596,7 +609,7 @@ body {
   height: 26px;
   @include prefix(transform, translateX(-50%));
   background-color: var(--very-light-gray-level2);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desktop .screen .stander::before {
@@ -618,8 +631,9 @@ body {
   @include prefix(border-radius, 50px);
   @include prefix(transform, translateX(-50%));
   background-color: var(--very-light-gray-level2);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
+
 // stander [End]
 
 
@@ -657,6 +671,7 @@ body {
   left: 12px;
   width: 6px;
 }
+
 // Stander's line [Start]
 // Screen [End]
 
@@ -673,7 +688,7 @@ body {
   height: 46px;
   background-color: var(--rose);
   @include prefix(border-radius, 0 0 15px 15px);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .frame .desktop .red-cube::before {
@@ -683,7 +698,7 @@ body {
   top: 2px;
   width: 28px;
   height: 28px;
-  border: solid var(--border-thick) transparent;
+  border: solid var(--border-thickness) transparent;
   border-color: var(--blue-gray) var(--blue-gray) transparent transparent;
   @include prefix(border-radius, 50%);
   @include prefix(transform, rotate(45deg));
@@ -708,6 +723,7 @@ body {
   height: 2px;
   background-color: var(--pink);
 }
+
 // Red cube [End]
 
 
@@ -738,7 +754,7 @@ body {
   background-color: var(--aqua);
   @include prefix(border-radius, 50px);
   @include prefix(transform, translateX(-50%));
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desktop .desk-lamp .lamp-base::before {
@@ -751,6 +767,7 @@ body {
   background-color: var(--sky-blue);
   @include prefix(border-radius, 50px);
 }
+
 // Lamp base [End]
 
 
@@ -768,7 +785,7 @@ body {
   background-color: var(--aqua);
   @include prefix(border-radius, 50%);
   @include prefix(transform, translateX(-50%));
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desktop .desk-lamp .circle-base::before {
@@ -781,6 +798,7 @@ body {
   background-color: var(--sky-blue);
   @include prefix(border-radius, 50%);
 }
+
 // Circle base [End]
 
 
@@ -797,7 +815,7 @@ body {
   @include center-x-y;
   background-color: var(--light-green);
   @include prefix(border-radius, 50%);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desktop .desk-lamp .stand::before,
@@ -806,7 +824,7 @@ body {
   position: absolute;
   width: 80px;
   z-index: -3;
-  height: var(--border-thick);
+  height: var(--border-thickness);
   background-color: var(--blue-gray);
 }
 
@@ -828,6 +846,7 @@ body {
   background-color: var(--teal);
   @include prefix(border-radius, 50%);
 }
+
 // Stand [End]
 
 
@@ -850,7 +869,7 @@ body {
   overflow: hidden;
   background-color: var(--aqua);
   @include prefix(border-radius, 50px 50px 0 0);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desk-lamp .light-holder .lines {
@@ -916,8 +935,9 @@ body {
   z-index: -1;
   background-color: var(--sky-blue);
   @include prefix(border-radius, 50%);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
+
 // Light holder [End]
 
 
@@ -957,6 +977,7 @@ body {
     background-color: var(--light-yellow);
   }
 }
+
 // Lamp light [End]
 
 
@@ -1007,6 +1028,7 @@ body {
   @include prefix(transform, rotateY(190deg) rotateX(190deg));
   border-color: transparent transparent var(--blue-gray) var(--blue-gray);
 }
+
 // Wires structure [Start]
 // Desk light [End]
 
@@ -1050,4 +1072,5 @@ body {
 .show {
   visibility: visible;
 }
+
 // Dark mode [End]
