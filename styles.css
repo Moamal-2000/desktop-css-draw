@@ -22,7 +22,7 @@
   --light-green: #bdf4e4;
   --teal: #92adb0;
   --light-yellow: #e0c787;
-  --border-thick: 5px;
+  --border-thickness: 5px;
 }
 
 *,
@@ -83,7 +83,7 @@ body {
 }
 .frame .underline {
   width: 750px;
-  height: var(--border-thick);
+  height: var(--border-thickness);
   background-color: var(--blue-gray);
   position: absolute;
   bottom: 50px;
@@ -97,7 +97,7 @@ body {
   content: "";
   position: absolute;
   background-color: var(--blue-gray);
-  height: var(--border-thick);
+  height: var(--border-thickness);
   border-radius: 10px;
 }
 
@@ -108,7 +108,7 @@ body {
 
 .frame .underline::after {
   right: -12px;
-  width: var(--border-thick);
+  width: var(--border-thickness);
 }
 
 .frame .desk {
@@ -126,8 +126,8 @@ body {
   width: 26px;
   height: 174px;
   background-color: var(--tan);
-  border-right: solid var(--border-thick) var(--blue-gray);
-  border-left: solid var(--border-thick) var(--blue-gray);
+  border-right: solid var(--border-thickness) var(--blue-gray);
+  border-left: solid var(--border-thickness) var(--blue-gray);
   overflow: hidden;
 }
 
@@ -161,7 +161,7 @@ body {
   height: 26px;
   border-radius: 50px;
   background-color: var(--light-orange);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
   z-index: 10;
   overflow: hidden;
 }
@@ -183,7 +183,7 @@ body {
   width: 457px;
   height: 42px;
   background-color: var(--brown);
-  border-bottom: solid var(--border-thick) var(--blue-gray);
+  border-bottom: solid var(--border-thickness) var(--blue-gray);
   overflow: hidden;
 }
 
@@ -192,7 +192,7 @@ body {
   left: 46px;
   top: 4px;
   width: 50px;
-  height: calc(var(--border-thick) - 1px);
+  height: calc(var(--border-thickness) - 1px);
   background-color: var(--blue-gray);
   border-radius: 50px;
   rotate: -50deg;
@@ -246,12 +246,12 @@ body {
   bottom: 0;
   width: 165px;
   height: 90px;
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
   overflow: hidden;
 }
 
 .desk .cabinet.top {
-  bottom: calc(90px - var(--border-thick));
+  bottom: calc(90px - var(--border-thickness));
   background-color: var(--light-orange);
 }
 
@@ -320,7 +320,7 @@ body {
   background-color: var(--tan);
   width: 76%;
   height: 68%;
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
   border-radius: 2px;
   display: flex;
   align-items: center;
@@ -396,7 +396,7 @@ body {
   height: 40px;
   border-radius: 50%;
   background-color: var(--very-light-gray);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .frame .desktop .screen {
@@ -416,7 +416,7 @@ body {
   z-index: 10;
   border-radius: 15px;
   background-color: var(--very-light-gray-level2);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .screen .screen-case .the-screen {
@@ -493,7 +493,7 @@ body {
   left: 0;
   bottom: 26px;
   width: 100%;
-  height: var(--border-thick);
+  height: var(--border-thickness);
   background-color: var(--blue-gray);
 }
 
@@ -515,12 +515,9 @@ body {
   top: 146px;
   width: 40px;
   height: 26px;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
+  translate: -50% 0;
   background-color: var(--very-light-gray-level2);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desktop .screen .stander::before {
@@ -539,16 +536,10 @@ body {
   width: 70px;
   height: 20px;
   bottom: -8px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -o-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
+  border-radius: 50px;
+  translate: -50%;
   background-color: var(--very-light-gray-level2);
-  border: solid var(--border-thick) var(--blue-gray);
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desktop .screen .line-effect {
@@ -558,10 +549,7 @@ body {
   width: 30.5px;
   height: 6px;
   background-color: var(--very-light-gray);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
+  translate: -50% 0;
 }
 
 .desktop .screen .line-effect::before,
@@ -571,10 +559,7 @@ body {
   top: 50%;
   height: 3px;
   background-color: var(--blue-gray);
-  -webkit-transform: translateY(calc(-50% + 0.5px));
-  -moz-transform: translateY(calc(-50% + 0.5px));
-  -o-transform: translateY(calc(-50% + 0.5px));
-  -ms-transform: translateY(calc(-50% + 0.5px));
+  translate: 0 calc(-50% + 0.5px);
 }
 
 .desktop .screen .line-effect::before {
@@ -595,11 +580,8 @@ body {
   width: 42px;
   height: 46px;
   background-color: var(--rose);
-  -webkit-border-radius: 0 0 15px 15px;
-  -moz-border-radius: 0 0 15px 15px;
-  -o-border-radius: 0 0 15px 15px;
-  -ms-border-radius: 0 0 15px 15px;
-  border: solid var(--border-thick) var(--blue-gray);
+  border-radius: 0 0 15px 15px;
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .frame .desktop .red-cube::before {
@@ -609,16 +591,10 @@ body {
   top: 2px;
   width: 28px;
   height: 28px;
-  border: solid var(--border-thick) transparent;
+  border: solid var(--border-thickness) transparent;
   border-color: var(--blue-gray) var(--blue-gray) transparent transparent;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
+  border-radius: 50%;
+  rotate: 45deg;
 }
 
 .frame .desktop .red-cube .shadow-effect {
@@ -628,10 +604,7 @@ body {
   width: 10px;
   height: 18px;
   background-color: var(--pink);
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -o-border-radius: 50px;
-  -ms-border-radius: 50px;
+  border-radius: 50px;
 }
 
 .frame .desktop .red-cube .shadow-effect::before {
@@ -661,15 +634,9 @@ body {
   z-index: -1;
   overflow: hidden;
   background-color: var(--aqua);
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -o-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  border: solid var(--border-thick) var(--blue-gray);
+  border-radius: 50px;
+  translate: -50% 0;
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desktop .desk-lamp .lamp-base::before {
@@ -680,10 +647,7 @@ body {
   width: 85%;
   height: 3px;
   background-color: var(--sky-blue);
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -o-border-radius: 50px;
-  -ms-border-radius: 50px;
+  border-radius: 50px;
 }
 
 .desktop .desk-lamp .circle-base {
@@ -694,15 +658,9 @@ body {
   height: 30px;
   z-index: -2;
   background-color: var(--aqua);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  border: solid var(--border-thick) var(--blue-gray);
+  border-radius: 50%;
+  translate: -50% 0;
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desktop .desk-lamp .circle-base::before {
@@ -713,10 +671,7 @@ body {
   width: 8px;
   height: 8px;
   background-color: var(--sky-blue);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
+  border-radius: 50%;
 }
 
 .desktop .desk-lamp .stand {
@@ -726,14 +681,11 @@ body {
   width: 30px;
   height: 30px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: var(--light-green);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border: solid var(--border-thick) var(--blue-gray);
+  border-radius: 50%;
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desktop .desk-lamp .stand::before,
@@ -742,36 +694,27 @@ body {
   position: absolute;
   width: 80px;
   z-index: -3;
-  height: var(--border-thick);
+  height: var(--border-thickness);
   background-color: var(--blue-gray);
 }
 
 .desktop .desk-lamp .stand::before {
   left: -6px;
   top: -26px;
-  -webkit-transform: rotate(137deg);
-  -moz-transform: rotate(137deg);
-  -o-transform: rotate(137deg);
-  -ms-transform: rotate(137deg);
+  rotate: 137deg;
 }
 
 .desktop .desk-lamp .stand::after {
   left: -6px;
   top: 44px;
-  -webkit-transform: rotate(44deg);
-  -moz-transform: rotate(44deg);
-  -o-transform: rotate(44deg);
-  -ms-transform: rotate(44deg);
+  rotate: 44deg;
 }
 
 .desktop .desk-lamp .stand .inner-circle {
   width: 35%;
   height: 35%;
   background-color: var(--teal);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
+  border-radius: 50%;
 }
 
 .desktop .desk-lamp .light-holder-container {
@@ -779,10 +722,7 @@ body {
   left: 43px;
   top: 24px;
   z-index: -4;
-  -webkit-transform: rotate(-42deg);
-  -moz-transform: rotate(-42deg);
-  -o-transform: rotate(-42deg);
-  -ms-transform: rotate(-42deg);
+  rotate: -42deg;
 }
 
 .desktop .desk-lamp .light-holder {
@@ -791,11 +731,8 @@ body {
   height: 50px;
   overflow: hidden;
   background-color: var(--aqua);
-  -webkit-border-radius: 50px 50px 0 0;
-  -moz-border-radius: 50px 50px 0 0;
-  -o-border-radius: 50px 50px 0 0;
-  -ms-border-radius: 50px 50px 0 0;
-  border: solid var(--border-thick) var(--blue-gray);
+  border-radius: 50px 50px 0 0;
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desk-lamp .light-holder .lines {
@@ -805,10 +742,7 @@ body {
   width: 16px;
   height: 4px;
   background-color: var(--blue-gray);
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -o-border-radius: 50px;
-  -ms-border-radius: 50px;
+  border-radius: 50px;
 }
 
 .desk-lamp .light-holder .lines::before {
@@ -818,10 +752,7 @@ body {
   width: 4px;
   height: 4px;
   background-color: inherit;
-  -webkit-border-radius: inherit;
-  -moz-border-radius: inherit;
-  -o-border-radius: inherit;
-  -ms-border-radius: inherit;
+  border-radius: inherit;
 }
 
 .desk-lamp .light-holder .light-effect {
@@ -831,10 +762,7 @@ body {
   width: 70%;
   height: 70%;
   background-color: var(--sky-blue);
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -o-border-radius: 50px;
-  -ms-border-radius: 50px;
+  border-radius: 50px;
 }
 
 .desk-lamp .light-holder .light-effect::before {
@@ -845,15 +773,9 @@ body {
   width: 7px;
   height: 14px;
   z-index: 2;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
+  border-radius: 50%;
   background-color: var(--light-sky-blue);
-  -webkit-transform: rotate(324deg);
-  -moz-transform: rotate(324deg);
-  -o-transform: rotate(324deg);
-  -ms-transform: rotate(324deg);
+  rotate: 324deg;
 }
 
 .desk-lamp .light-holder .light-effect::after {
@@ -875,11 +797,8 @@ body {
   height: 27px;
   z-index: -1;
   background-color: var(--sky-blue);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border: solid var(--border-thick) var(--blue-gray);
+  border-radius: 50%;
+  border: solid var(--border-thickness) var(--blue-gray);
 }
 
 .desk-lamp .lamp-light {
@@ -890,10 +809,7 @@ body {
   height: 27px;
   z-index: -1;
   border: solid 3px var(--blue-gray);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
+  border-radius: 50%;
   background-color: var(--light-yellow);
   animation: broken-light 4s 0.5s infinite ease-in-out;
 }
@@ -927,14 +843,8 @@ body {
   width: 52px;
   height: 43px;
   border: solid 3px;
-  -webkit-transform: rotate(92deg);
-  -moz-transform: rotate(92deg);
-  -o-transform: rotate(92deg);
-  -ms-transform: rotate(92deg);
-  -webkit-border-radius: 2px 39px 4px 29px;
-  -moz-border-radius: 2px 39px 4px 29px;
-  -o-border-radius: 2px 39px 4px 29px;
-  -ms-border-radius: 2px 39px 4px 29px;
+  rotate: 92deg;
+  border-radius: 2px 39px 4px 29px;
   border-color: transparent transparent var(--blue-gray) var(--blue-gray);
 }
 
@@ -945,10 +855,7 @@ body {
   width: 52px;
   height: 32px;
   border: solid 3px;
-  -webkit-border-radius: 2px 39px 4px 29px;
-  -moz-border-radius: 2px 39px 4px 29px;
-  -o-border-radius: 2px 39px 4px 29px;
-  -ms-border-radius: 2px 39px 4px 29px;
+  border-radius: 2px 39px 4px 29px;
   border-color: transparent transparent var(--blue-gray) var(--blue-gray);
 }
 
@@ -960,55 +867,7 @@ body {
   height: 27px;
   z-index: -3;
   border: solid 3px;
-  -webkit-border-radius: 2px 39px 4px 29px;
-  -moz-border-radius: 2px 39px 4px 29px;
-  -o-border-radius: 2px 39px 4px 29px;
-  -ms-border-radius: 2px 39px 4px 29px;
-  -webkit-transform: rotateY(190deg) rotateX(190deg);
-  -moz-transform: rotateY(190deg) rotateX(190deg);
-  -o-transform: rotateY(190deg) rotateX(190deg);
-  -ms-transform: rotateY(190deg) rotateX(190deg);
+  border-radius: 2px 39px 4px 29px;
+  transform: rotateY(190deg) rotateX(190deg);
   border-color: transparent transparent var(--blue-gray) var(--blue-gray);
-}
-
-#dark-mode-icon {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin: 20px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  cursor: pointer;
-  position: relative;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-#dark-mode-icon i {
-  font-size: 24px;
-  color: var(--dark-white-color);
-  -webkit-transition: opacity 0.3s;
-  -moz-transition: opacity 0.3s;
-  -o-transition: opacity 0.3s;
-  -ms-transition: opacity 0.3s;
-}
-#dark-mode-icon i:hover {
-  opacity: 0.5;
-}
-
-#dark-mode-icon i:last-child {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.hide {
-  visibility: hidden;
-}
-
-.show {
-  visibility: visible;
 }/*# sourceMappingURL=styles.css.map */
